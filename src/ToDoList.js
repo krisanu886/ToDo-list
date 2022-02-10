@@ -11,13 +11,19 @@ const ToDoList = () => {
     setInputList(event.target.value);
   };
   const itemSubmit = () => {
-    setItems((oldItems) => {
-      return [...oldItems, inputList];
-    });
-    setInputList("");
+    if (!inputList) {
+    } else {
+      setItems([...items, inputList]);
+      setInputList("");
+    }
   };
-  const textDelete=()=>{}
-  const textEdit=()=>{}
+  const textDelete = (id) => {
+    const updatedtext = items.filter((elem, ind) => {
+      return ind !== id;
+    });
+    setItems(updatedtext);
+  };
+  const textEdit = () => {};
   return (
     <>
       <div className="container">
@@ -30,14 +36,14 @@ const ToDoList = () => {
         />
         <button onClick={itemSubmit}>+ </button>
 
-        {items.map((itemsValue) => {
+        {items.map((itemsValue, index) => {
           return (
-            <div className="map">
+            <div className="map" key={index}>
               <textArea type="text" value={inputList}>
                 {itemsValue}
               </textArea>
               <div className="mapButton">
-                <i onClick={textDelete}>
+                <i onClick={() => textDelete(index)}>
                   <FcFullTrash />
                 </i>
                 {/* <i onClick={textDownload}>
