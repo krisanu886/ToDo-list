@@ -4,6 +4,7 @@ import { FcFullTrash } from "react-icons/fc";
 import { FaPencilAlt } from "react-icons/fa";
 import "./style.css";
 
+
 //Get items in local storage.
 const getItems = () => {
   let list = localStorage.getItem("lists");
@@ -59,7 +60,7 @@ const ToDoList = () => {
         {items.map((itemsValue, index) => {
           return (
             <div className="map" key={index}>
-              <textArea type="text" value={inputList}>
+              <textArea className="fl w-20" type="text" value={inputList}>
                 {itemsValue}
               </textArea>
 

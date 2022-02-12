@@ -51,12 +51,13 @@ button:hover{
 .map{
     margin: 10px;
     border: none;
-    width: 20px;
+    width: 80px;
+    
 }
 .mapButton{
-    display: flex;
-    flex-direction: row;
-    
+     display: flex;
+    flex-direction: row; 
+     
 }
 i{
     font-size: larger;
@@ -65,4 +66,10 @@ i{
 i:hover{
     cursor: pointer;
     box-shadow: 2px 2px 2px 2px rgb(179, 182, 182);
+}
+textArea{
+    border: none;
+    width: 150px;
+    height: 80px;
+   
 }
