@@ -4,15 +4,13 @@ import { FcFullTrash } from "react-icons/fc";
 import { FaPencilAlt } from "react-icons/fa";
 import "./style.css";
 
-
 //Get items in local storage.
 const getItems = () => {
   let list = localStorage.getItem("lists");
   console.log(list);
-  if(list){
+  if (list) {
     return JSON.parse(localStorage.getItem("lists"));
-  }
-  else{
+  } else {
     return [];
   }
 };
@@ -47,20 +45,23 @@ const ToDoList = () => {
   // ----------- //
   return (
     <>
-      <div className="container">
-        <h1 className="h1">✍️ ToDo List 📒</h1>
-        <input
-          type="text"
-          value={inputList}
-          placeholder="Add Your Items"
-          onChange={inputItems}
-        />
-        <button onClick={itemSubmit}>+ </button>
+      <div className="container ">
+        <div className="tc ma3 ">
+          <h1 className="h1 mb5 dim">✍️ ToDo List 📒</h1>
+          <input
+          className=""
+            type="text"
+            value={inputList}
+            placeholder="Add Your Items"
+            onChange={inputItems}
+          />
+          <button className="ma2" onClick={itemSubmit}> + </button>
+        </div>
         {/* Display empty array using map method */}
         {items.map((itemsValue, index) => {
           return (
-            <div className="map" key={index}>
-              <textArea className="fl w-20" type="text" value={inputList}>
+            <div className="map fl w-20 pa2 " key={index}>
+              <textArea className="bg-lightest-blue" type="text" value={inputList}>
                 {itemsValue}
               </textArea>
 
